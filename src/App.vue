@@ -1,5 +1,7 @@
 <template>
-  <h1>v1</h1>
+  <button v-if="!show" @click="show = true">Play</button>
+  <div v-if="show">
+    <h1>v1</h1>
 
   <div class="grid">
     <div class="wrap">
@@ -230,6 +232,7 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -240,6 +243,16 @@ export default {
   components: {
     HelloWorld,
   },
+  data() {
+    return {
+      show: false
+    }
+  },
+  created() {
+    // setTimeout(() => {
+    //   this.show = true
+    // }, 3000)
+  }
 };
 </script>
 
